@@ -10,10 +10,6 @@ class Solution {
         
         if(node == null) return;
 
-        if (node.left == null && node.right == null && dir==0) {
-            return;
-        }
-
         if (node.left == null && node.right == null && dir==1) {
             this.sum += node.val;
             return;
