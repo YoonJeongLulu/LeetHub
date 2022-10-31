@@ -4,6 +4,7 @@ class Solution {
   }
 
   public boolean isValidBST(TreeNode node, Integer minLimit, Integer maxLimit) {
+     
     if (node == null) return true;
 
     if (minLimit != null && node.val <= minLimit) return false;
