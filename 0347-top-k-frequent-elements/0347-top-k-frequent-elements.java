@@ -7,13 +7,17 @@ class Solution {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         
-        List<Integer> list = new ArrayList<>(map.keySet());
+        Queue<Integer> q = new PriorityQueue<>((a,b) -> (map.get(b) - map.get(a)));
         
-        Collections.sort(list, (a,b) -> (map.get(b) - map.get(a)));
+        
+        for (Integer key : map.keySet()) {
+            q.add(key);
+        }
+        
         
         int[] ans = new int[k];
         for (int i=0; i < k; i++) {
-            ans[i] = list.get(i);
+            ans[i] = q.poll();
         }
         
         return ans;
