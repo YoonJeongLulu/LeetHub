@@ -13,7 +13,6 @@ class Solution {
         
         int[] ans = new int[k];
         for (int i=0; i < k; i++) {
-            System.out.println(list.get(i));
             ans[i] = list.get(i);
         }
         
