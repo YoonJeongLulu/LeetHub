@@ -11,7 +11,7 @@ class Solution(object):
         
         visited = [[False] * m for _ in range(n)]
         
-        end = 0
+        end = 1
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         
         x = 0
@@ -22,12 +22,11 @@ class Solution(object):
         
         idx = 0
         while (True):
-            if (end == n*m-1):
+            if (end == n*m):
                 break
             
             dx = directions[idx%4][0]
             dy = directions[idx%4][1]
-            print(idx)
             
             if (go_outside(x+dx, y+dy)):
                 idx += 1
@@ -38,7 +37,6 @@ class Solution(object):
             x = x + dx
             y = y + dy
             ans.append(matrix[x][y])
-            print(ans)
             visited[x][y] = True
             end += 1
             
